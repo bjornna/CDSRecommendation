@@ -12,6 +12,7 @@ Simple API to collect CDS Recommendation for a given patient
     + ehrId (string) - The ehrId to be queried
 
 ### List Recommendations for EHR [GET]
+d
 
 + Response 200 (application/json)
 
@@ -19,22 +20,43 @@ Simple API to collect CDS Recommendation for a given patient
             {
                 "queryTime": 20,
                 "latestRun": "2015-08-05T08:40:51.620Z",
-                "recommendations": [
+                "categories": [
                     {
+                    
                         "strength": 5,
-                        "label": "high", 
+                        "label": "Critical", 
                         "totals" : 0
                         
                     },
                     {
+                    
+                        "strength": 4,
+                        "label": "Important", 
+                        "totals" : 0
+                        
+                    },
+                    {
+                    
                         "strength": 3,
-                        "label": "medium", 
+                        "label": "Very significant", 
                         "totals" : 0
                         
                     },
                     {
+                        "strength": 2,
+                        "label": "Significant", 
+                        "totals" : 0
+                        
+                    },
+                    {
+                        "strength": 1,
+                        "label": "Minor significance", 
+                        "totals" : 0
+                        
+                    },
+                     {
                         "strength": 0,
-                        "label": "low", 
+                        "label": "Not significant", 
                         "totals" : 0
                         
                     }
