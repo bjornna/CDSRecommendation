@@ -1,0 +1,43 @@
+FORMAT: 1A
+HOST: http://vt-ala02:9090/
+
+# CDSRecommendation
+
+Simple API to collect CDS Recommendation for a given patient 
+
+## Recommendations [/api/v1/cds/recommendation/{ehrId}]
+
+
++ Parameters
+    + ehrId (string) - The ehrId to be queried
+
+### List Recommendations for EHR [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "queryTime": 20,
+                "latestRun": "2015-08-05T08:40:51.620Z",
+                "recommendations": [
+                    {
+                        "strength": 5,
+                        "label": "high", 
+                        "totals" : 0
+                        
+                    },
+                    {
+                        "strength": 3,
+                        "label": "medium", 
+                        "totals" : 0
+                        
+                    },
+                    {
+                        "strength": 0,
+                        "label": "low", 
+                        "totals" : 0
+                        
+                    }
+                ]
+            }
+        ]
