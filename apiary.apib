@@ -7,59 +7,43 @@ Simple API to collect CDS Recommendation for a given patient
 
 ## Recommendations [/api/v1/cds/recommendation/{ehrId}]
 
+Strength is defined as: 
+
+* CRITICAL(5), 
+* IMPORTANT(4), 
+* VERY_SIGNIFICANT(3), 
+* SIGNIFICANT(2), 
+* MINOR_SIGNIFICANT(1), 
+* NOT_SIGNIFICANT(0), 
+* ERROR(Integer.MIN_VALUE);
 
 + Parameters
     + ehrId (string) - The ehrId to be queried
 
 ### List Recommendations for EHR [GET]
-d
+
 
 + Response 200 (application/json)
 
-        [
-            {
-                "queryTime": 20,
-                "latestRun": "2015-08-05T08:40:51.620Z",
-                "categories": [
-                    {
-                    
-                        "strength": 5,
-                        "label": "Critical", 
-                        "totals" : 0
-                        
-                    },
-                    {
-                    
-                        "strength": 4,
-                        "label": "Important", 
-                        "totals" : 0
-                        
-                    },
-                    {
-                    
-                        "strength": 3,
-                        "label": "Very significant", 
-                        "totals" : 0
-                        
-                    },
-                    {
-                        "strength": 2,
-                        "label": "Significant", 
-                        "totals" : 0
-                        
-                    },
-                    {
-                        "strength": 1,
-                        "label": "Minor significance", 
-                        "totals" : 0
-                        
-                    },
-                     {
-                        "strength": 0,
-                        "label": "Not significant", 
-                        "totals" : 0
-                        
-                    }
-                ]
-            }
-        ]
+{
+  "queryTime": 1454,
+  "latestRun": 1464741332672,
+  "categories": [
+    {
+      "strength": 1,
+      "label": "MINOR_SIGNIFICANT",
+      "totals": 2,
+      "guides": [
+        "SIRS_Calculation",
+        "DemoScreening.v1"
+      ]
+    }
+  ],
+  "guides": [
+    "DemoRisk1.v1",
+    "MEWS.v1",
+    "SIRS_Calculation",
+    "DemoScreening.v1",
+    "MEWS.v2"
+  ]
+}
